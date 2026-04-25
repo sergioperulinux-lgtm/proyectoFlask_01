@@ -1,55 +1,47 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-        }
-        .contenedor{
-            width: 320px;
-            margin: 100px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
-        h2{
-            text-align: center;
-        }
-        input{
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            box-sizing: border-box;
-        }
-        button{
-            width: 100%;
-            padding: 10px;
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        .mensaje{
-            color: red;
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="contenedor">
-        <h2>Iniciar sesión</h2>
-        <form action="/login" method="post">
-            <input type="text" name="usuario" placeholder="Usuario" required>
-            <input type="password" name="clave" placeholder="Contraseña" required>
-            <button type="submit">Ingresar</button>
-        </form>
-        <div class="mensaje">{{ mensaje }}</div>
-    </div>
-</body>
-</html>
+from flask import Flask, render_template, request, redirect, url_for
+
+app = Flask(__name__)
+
+# LOGIN
+@app.route("/")
+def inicio():
+    return render_template("login.html", mensaje="")
+
+@app.route("/login", methods=["POST"])
+def login():
+    usuario = request.form.get("usuario")
+    clave = request.form.get("clave")
+
+    if usuario == "admin" and clave == "1234":
+        return redirect(url_for("dashboard"))
+    else:
+        return render_template("login.html", mensaje="Usuario o contraseña incorrectos")
+
+# DASHBOARD
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
+# CATEGORÍAS
+@app.route("/categorias")
+def categorias():
+    return render_template("categorias.html")
+
+# CURSOS
+@app.route("/cursos")
+def cursos():
+    return render_template("cursos.html")
+
+# PÁGINAS
+@app.route("/paginas")
+def paginas():
+    return render_template("paginas.html")
+
+# PERFIL
+@app.route("/perfil")
+def perfil():
+    return render_template("perfil.html")
+
+# EJECUCIÓN
+if __name__ == "__main__":
+    app.run(debug=True)

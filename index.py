@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -12,9 +12,13 @@ def login():
     clave = request.form.get("clave")
 
     if usuario == "admin" and clave == "1234":
-        return f"<h1>Bienvenido, {usuario}</h1><p>Acceso correcto.</p>"
+        return redirect("/dashboard")   # 👈 simple, sin complicaciones
     else:
         return render_template("login.html", mensaje="Usuario o contraseña incorrectos")
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
