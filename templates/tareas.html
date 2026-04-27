@@ -1,0 +1,14 @@
+<h1>Tareas</h1>
+
+<form method="POST">
+<input name="tarea" placeholder="Nueva tarea">
+<button>Agregar</button>
+</form>
+
+<ul>
+{% for t in tareas %}
+<li>{{ t }}</li>
+{% endfor %}
+</ul>
+
+<a href="/dashboard">Volver</a>

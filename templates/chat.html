@@ -1,0 +1,14 @@
+<h1>Chat</h1>
+
+<form method="POST">
+<input name="mensaje">
+<button>Enviar</button>
+</form>
+
+<ul>
+{% for u,m in mensajes %}
+<li><b>{{u}}:</b> {{m}}</li>
+{% endfor %}
+</ul>
+
+<a href="/dashboard">Volver</a>

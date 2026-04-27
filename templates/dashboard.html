@@ -7,23 +7,22 @@
 body {
     font-family: Arial;
     background: #f4f6f9;
-    text-align: center;
 }
 
-.container {
+.grid {
     display: grid;
     grid-template-columns: repeat(3, 200px);
     gap: 20px;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .card {
     background: white;
     padding: 30px;
+    text-align: center;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -41,14 +40,14 @@ a {
 
 <body>
 
-<h1>Dashboard</h1>
+<h1 style="text-align:center;">Dashboard</h1>
 
-<div class="container">
-    <a href="/opcion1"><div class="card">📊 Opción 1</div></a>
-    <a href="/opcion2"><div class="card">📁 Opción 2</div></a>
-    <a href="/opcion3"><div class="card">📄 Opción 3</div></a>
-    <a href="/opcion4"><div class="card">⚙️ Opción 4</div></a>
-    <a href="/opcion5"><div class="card">👤 Opción 5</div></a>
+<div class="grid">
+    <a href="/generador"><div class="card">🤖 Generador</div></a>
+    <a href="/calculadora"><div class="card">🧮 Calculadora</div></a>
+    <a href="/tareas"><div class="card">📅 Tareas</div></a>
+    <a href="/chat"><div class="card">💬 Chat</div></a>
+    <a href="/panel"><div class="card">📊 Panel</div></a>
 </div>
 
 </body>
