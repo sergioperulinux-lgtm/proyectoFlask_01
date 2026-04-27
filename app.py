@@ -15,33 +15,33 @@ def login():
     if usuario == "admin" and clave == "1234":
         return redirect(url_for("dashboard"))
     else:
-        return render_template("login.html", mensaje="Usuario o contraseña incorrectos")
+        return render_template("login.html", mensaje="Clave incorrecta")
 
 # DASHBOARD
 @app.route("/dashboard")
 def dashboard():
     return render_template("dashboard.html")
 
-# CATEGORÍAS
-@app.route("/categorias")
-def categorias():
-    return render_template("categorias.html")
+# OPCIONES
+@app.route("/opcion1")
+def opcion1():
+    return render_template("opcion1.html")
 
-# CURSOS
-@app.route("/cursos")
-def cursos():
-    return render_template("cursos.html")
+@app.route("/opcion2")
+def opcion2():
+    return render_template("opcion2.html")
 
-# PÁGINAS
-@app.route("/paginas")
-def paginas():
-    return render_template("paginas.html")
+@app.route("/opcion3")
+def opcion3():
+    return render_template("opcion3.html")
 
-# PERFIL
-@app.route("/perfil")
-def perfil():
-    return render_template("perfil.html")
+@app.route("/opcion4")
+def opcion4():
+    return render_template("opcion4.html")
 
-# EJECUCIÓN
+@app.route("/opcion5")
+def opcion5():
+    return render_template("opcion5.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
-    <style>
-        body { font-family: Arial; background: #f4f6f9; text-align: center; }
-        .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 50px; }
-        .card {
-            width: 200px; height: 120px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .card:hover { transform: scale(1.05); background: #e3f2fd; }
-        a { text-decoration: none; color: black; }
-    </style>
+<title>Dashboard</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f4f6f9;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: #e3e9ff;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+</style>
 </head>
+
 <body>
 
 <h1>Dashboard</h1>
 
 <div class="container">
-    <a href="/categorias"><div class="card">📚 Categorías</div></a>
-    <a href="/cursos"><div class="card">📘 Cursos</div></a>
-    <a href="/paginas"><div class="card">📄 Páginas</div></a>
-    <a href="/perfil"><div class="card">👤 Perfil</div></a>
+    <a href="/opcion1"><div class="card">📊 Opción 1</div></a>
+    <a href="/opcion2"><div class="card">📁 Opción 2</div></a>
+    <a href="/opcion3"><div class="card">📄 Opción 3</div></a>
+    <a href="/opcion4"><div class="card">⚙️ Opción 4</div></a>
+    <a href="/opcion5"><div class="card">👤 Opción 5</div></a>
 </div>
 
 </body>
